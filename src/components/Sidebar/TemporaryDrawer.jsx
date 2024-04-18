@@ -5,9 +5,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { styled, useTheme } from "@mui/material/styles";
-import list from "./list";
+import MenuList from "./MenuList";
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(props) {
 	const [state, setState] = React.useState(false);
 	const DrawerHeader = styled("div")(({ theme }) => ({
 		display: "flex",
@@ -35,7 +35,7 @@ export default function TemporaryDrawer() {
 					</IconButton>
 				</DrawerHeader>
 				<Divider />
-				{list()}
+				<MenuList {...props}/>
 			</Drawer>
 		</>
 	);

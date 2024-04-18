@@ -7,13 +7,13 @@ import Container from "@mui/material/Container";
 import TemporaryDrawer from "../Sidebar/TemporaryDrawer";
 import NavbarMenu from "./NavbarMenu";
 
-function Navbar() {
+function Navbar(props) {
 	return (
 		<AppBar position="sticky">
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Box sx={{ flexGrow: 1 }}>
-						<TemporaryDrawer />
+						<TemporaryDrawer {...props}/>
 					</Box>
 					<Typography
 						variant="h5"

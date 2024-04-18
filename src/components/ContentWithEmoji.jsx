@@ -10,6 +10,7 @@ export default function ContentWithEmoji({ text }) {
 					return (
 						<span key={index}>
 							<img src={BASE_EMOJI_URL(number)} />
+							
 						</span>
 					);
 				} else {

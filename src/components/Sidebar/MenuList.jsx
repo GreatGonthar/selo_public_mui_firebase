@@ -8,10 +8,12 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 import MailIcon from "@mui/icons-material/Mail";
-import { Switch } from "@mui/material";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { FormControlLabel, Switch } from "@mui/material";
 import Item from "./Item";
 // сделать так, чтобы при выборе элемента меню, оно темнело
-const list = () => {
+const MenuList = ({ mode, setMode }) => {
 	const block1 = ["Inbox", "Starred", "Send email", "Drafts"];
 	const block2 = ["All mail", "Trash", "Spam"];
 	return (
@@ -30,10 +32,14 @@ const list = () => {
 					<ListItem disablePadding>
 						<ListItemButton>
 							<ListItemIcon>
-								<ModeNightIcon />
+								{mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
+								
 							</ListItemIcon>
-							<Switch />
+							<Switch onChange={() => setMode(mode === "light" ? "dark" : "light")} />
 						</ListItemButton>
+					</ListItem>
+					<ListItem disablePadding>
+						<FormControlLabel value="blya" control={<Switch color="primary" />} label="бля режим" labelPlacement="start" color="text.secondary" />
 					</ListItem>
 				</List>
 			</Box>
@@ -41,4 +47,4 @@ const list = () => {
 	);
 };
 
-export default list;
+export default MenuList;
