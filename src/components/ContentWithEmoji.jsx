@@ -9,8 +9,8 @@ export default function ContentWithEmoji({ text }) {
 					const number = part.slice(5);
 					console.log(BASE_EMOJI_URL(1))
 					return (
-						<span key={index}>
-							<img src="https://www.dmosk.ru/img/qip_smiles/1.gif" />												
+						<span key={index}>							
+							<img src={BASE_EMOJI_URL(number)} />						
 						</span>
 					);
 				} else {
