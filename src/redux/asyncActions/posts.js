@@ -2,7 +2,7 @@ import { postsRef } from "../../components/constants";
 import { db } from "../../firebase";
 import { setImageContent } from "../reducers/postData"
 import { setAddPostPost, setDeletePost, setManyPosts } from "../reducers/posts"
-import { getDocs, setDoc, doc, deleteDoc } from "firebase/firestore";
+import { getDocs, setDoc, doc, deleteDoc, addDoc, collection } from "firebase/firestore";
 
 export const getFirebasePosts = () => {
     return (dispatch) => {        
@@ -23,6 +23,7 @@ export const dellFirebasePost = (id) => {
 
 export const setFirebasePost = (post) => {   
     return async (dispatch) => {        
+       
             await setDoc(doc(postsRef), post);
             dispatch(setAddPostPost(post))
         };

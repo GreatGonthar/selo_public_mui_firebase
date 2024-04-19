@@ -7,10 +7,10 @@ export default function ContentWithEmoji({ text }) {
 			{text.split(new RegExp(`(${ACQ_SMILE_MASK}\\d+)`, 'g')).map((part, index) => {
 				if (part.startsWith(ACQ_SMILE_MASK)) {
 					const number = part.slice(5);
+					console.log(BASE_EMOJI_URL(1))
 					return (
 						<span key={index}>
-							<img src={BASE_EMOJI_URL(number)} />
-							
+							<img src="https://www.dmosk.ru/img/qip_smiles/1.gif" />												
 						</span>
 					);
 				} else {

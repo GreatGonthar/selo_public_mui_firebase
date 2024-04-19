@@ -1,6 +1,6 @@
 import { Modal, Box, styled, Typography, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import DialogWindowElements from "./ModalWindowElements";
+import ModalWindowElements from "./ModalWindowElements";
 
 const ModalWindow = ({ openModal, handleCloseModal }) => {
 	const MyStyledModal = styled(Modal)({
@@ -28,7 +28,7 @@ const ModalWindow = ({ openModal, handleCloseModal }) => {
 						<CloseIcon />
 					</IconButton>
 				</UserBox>			
-					<DialogWindowElements handleCloseModal={handleCloseModal}/>			
+					<ModalWindowElements {...{handleCloseModal}}/>			
 			</Box>
 		</MyStyledModal >
 	);

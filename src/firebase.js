@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBEHpjG9f1t7NeMUeg62Zs9J7j1m7F7yA4",
-  authDomain: "selo-users-data.firebaseapp.com",
-  projectId: "selo-users-data",
-  storageBucket: "selo-users-data.appspot.com",
-  messagingSenderId: "291626554055",
-  appId: "1:291626554055:web:6a6faa7ed0c8918c6d24e2",
-  measurementId: "G-K0R6R9M8GC"
+  apiKey: import.meta.env.VITE_SELO_PUBLIC_MUI_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_SELO_PUBLIC_MUI_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_SELO_PUBLIC_MUI_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_SELO_PUBLIC_MUI_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_SELO_PUBLIC_MUI_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_SELO_PUBLIC_MUI_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_SELO_PUBLIC_MUI_FIREBASE_MEASUREMENT_ID
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
