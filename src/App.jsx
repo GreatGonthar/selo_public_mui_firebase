@@ -23,12 +23,13 @@ function createMyTheme(mode) {
 
 function App() {
 	const [mode, setMode] = useState("light");
+	const [blya, setBlya] = useState(false)
 	const theme = createMyTheme(mode);
 
 	return (
 		<ThemeProvider theme={theme}>
 			<Box bgcolor={"background.default"}>
-				<Navbar mode={mode} setMode={setMode} />
+				<Navbar {...{mode, setMode, blya, setBlya}} />
 				<Stack direction="row" justifyContent="space-between">
 					<Feed />
 				</Stack>

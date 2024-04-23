@@ -1,4 +1,4 @@
-import { TextField} from "@mui/material";
+import {TextField} from "@mui/material";
 
 const StyledTextField = ({ handleTextFieldChange, textValue }) => {
 	return (
@@ -10,7 +10,7 @@ const StyledTextField = ({ handleTextFieldChange, textValue }) => {
 				multiline
 				sx={{ width: "100%" }}
 				value={textValue}
-				onChange={handleTextFieldChange}
+				onChange={handleTextFieldChange}				
 			/>
 		</>
 	);

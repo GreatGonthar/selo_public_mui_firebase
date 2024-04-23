@@ -12,19 +12,26 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { FormControlLabel, Switch } from "@mui/material";
 import Item from "./Item";
+import { useDispatch } from "react-redux";
+import { setBlyaReducer } from "../../redux/reducers/posts";
 // сделать так, чтобы при выборе элемента меню, оно темнело
-const MenuList = ({ mode, setMode }) => {
-	const block1 = ["Inbox", "Starred", "Send email", "Drafts"];
+const MenuList = ({ mode, setMode, blya, setBlya }) => {	
+	const dispatch = useDispatch();
+	const block1 = ["check", "Starred", "Send email", "Drafts"];
 	const block2 = ["All mail", "Trash", "Spam"];
+	const dispatchBlya = ()=>{
+		setBlya(prev => !prev)
+		dispatch(setBlyaReducer(blya))
+	}
 	return (
 		<>
-			<Box sx={{ width: "100%", pr: 5 }} role="presentation" onClick={() => console.log("iop")} onKeyDown={() => console.log("poi")}>
+			<Box sx={{ width: "100%", pr: 5 }} role="presentation">
 				<List>
 					{block1.map((text, index) => (
 						<Item icon={index % 2 === 0 ? <InboxIcon /> : <MailIcon />} text={text} key={text} />
 					))}
 				</List>
-				<Divider />
+				<Divider />				
 				<List>
 					{block2.map((text, index) => (
 						<Item icon={index % 2 === 0 ? <InboxIcon /> : <MailIcon />} text={text} key={text} />
@@ -32,14 +39,14 @@ const MenuList = ({ mode, setMode }) => {
 					<ListItem disablePadding>
 						<ListItemButton>
 							<ListItemIcon>
-								{mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
-								
+								{mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}								
 							</ListItemIcon>
-							<Switch onChange={() => setMode(mode === "light" ? "dark" : "light")} />
+							<Switch onChange={() => setMode(mode === "light" ? "dark" : "light")} 
+							checked={mode === "light" ? false : true}/>
 						</ListItemButton>
 					</ListItem>
 					<ListItem disablePadding>
-						<FormControlLabel value="blya" control={<Switch color="primary" />} label="бля режим" labelPlacement="start" color="text.secondary" />
+						<FormControlLabel value="blya" control={<Switch checked={blya} onChange={dispatchBlya} />} label="бля режим" labelPlacement="start" color="text.secondary" />
 					</ListItem>
 				</List>
 			</Box>

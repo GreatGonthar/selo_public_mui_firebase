@@ -10,3 +10,4 @@ export const CREATE_TEXT_CONTENT = "create text content";
 export const ADD_MANY_POSTS = "add many posts"
 export const DELETE_POST = "delete post"
 export const ADD_POST = "add post"
+export const BLYA_MODE = "blya mode"
