@@ -10,7 +10,7 @@ export default function ContentWithEmoji({ text }) {
 					if (number > 281){
 						return (
 							<span key={index}>							
-								<img src={BASE_EMOJI_URL_GOOSE(GOOSE_FILENAME_ARR[number-282])} 
+								<img src={BASE_EMOJI_URL_GOOSE(number-281)} 
 								style={{ maxHeight: '3em', maxWidth: '3em', height: '3em', width: '3em' }}
 								/>						
 							</span>

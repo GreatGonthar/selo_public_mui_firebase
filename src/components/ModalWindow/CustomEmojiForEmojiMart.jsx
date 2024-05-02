@@ -23,14 +23,13 @@ for (let i = 1; i <= 281; i++) {
 	});
 }
 
-for (let i = 1; i <= 30; i++) {
+for (let i = 1; i <= 35; i++) {
 	CustomEmojiForEmojiMart[1].emojis.push({
 		id: `${count+i}`,
 		name: `name=${count+i}`,
 		keywords: ["Funky Goose", "webp"],
-		skins: [{ src: BASE_EMOJI_URL_GOOSE(GOOSE_FILENAME_ARR[i-1]) }],
+		skins: [{ src: BASE_EMOJI_URL_GOOSE(i) }],
 	});
 }
-console.log(CustomEmojiForEmojiMart[1].emojis)
 
 export default CustomEmojiForEmojiMart;

@@ -5,7 +5,8 @@ import no_image from "../assets/no_image.svg";
 export const postsRef = collection(db, "posts");
 export const ACQ_SMILE_MASK = ":icq=";
 export const BASE_EMOJI_URL = (name) => `https://www.dmosk.ru/img/qip_smiles/${name}.gif`;
-export const BASE_EMOJI_URL_GOOSE = (name) => `https://sticker-collection.com/stickers/animated/FunkyGoose/whatsapp/${name}.webp`;
+export const BASE_EMOJI_URL_GOOSE_WEBP = (name) => `https://sticker-collection.com/stickers/animated/FunkyGoose/whatsapp/${name}.webp`;
+export const BASE_EMOJI_URL_GOOSE = (name) => `https://tgram.ru/wiki/stickers/img/FunkyGoose/gif/${name}.gif`
 export const GOOSE_FILENAME_ARR = [
 	"fa70030b-1411-4f7e-84d9-bd6371c7e7f5file_2760365",
 	"f7659bc4-bee5-4b1e-9761-85b58ca8dee4file_2760373",
