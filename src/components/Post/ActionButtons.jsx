@@ -39,6 +39,14 @@ export default function ActionButtons({ handleExpandClick, expanded, likes, id }
 			setDellLoader(true)
 		}
 	};
+	const copyClipBoard = () => {
+		const url = window.location.href		
+		navigator.clipboard.writeText(url).then(() => {			
+			handleTooltipOpen()			
+		  }).catch(err => {
+			console.error('Ошибка при копировании URL: ', err);			
+		  });
+	}
 	return (
 		<>
 			<CardActions disableSpacing>
@@ -54,9 +62,9 @@ export default function ActionButtons({ handleExpandClick, expanded, likes, id }
 						disableFocusListener
 						disableHoverListener
 						disableTouchListener
-						title="кнопка не работает"
+						title="Ссылка скопирована в буфер обмена"
 						placement="top-end">
-						<IconButton aria-label="share" onClick={handleTooltipOpen}>
+						<IconButton aria-label="share" onClick={copyClipBoard}>
 							<ShareIcon />
 						</IconButton>
 					</Tooltip>

@@ -6,6 +6,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import TemporaryDrawer from "../Sidebar/TemporaryDrawer";
 import NavbarMenu from "./NavbarMenu";
+import LoginButton from "./LoginButton";
+import { Button } from "@mui/material";
 
 function Navbar(props) {
 	return (
@@ -33,7 +35,9 @@ function Navbar(props) {
 						}}>
 						Social Network
 					</Typography>
-					<NavbarMenu />
+					<LoginButton />
+					
+					{/* <NavbarMenu /> */}
 				</Toolbar>
 			</Container>
 		</AppBar>

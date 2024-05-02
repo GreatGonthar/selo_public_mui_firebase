@@ -2,7 +2,7 @@ import { Modal, Box, styled, Typography, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import ModalWindowElements from "./ModalWindowElements";
 
-const ModalWindow = ({ openModal, handleCloseModal }) => {
+const ModalWindow = ({ openModal, handleCloseModal, title, children }) => {
 	const MyStyledModal = styled(Modal)({
 		display: "flex",
 		alignItems: "flex-start",
@@ -22,13 +22,13 @@ const ModalWindow = ({ openModal, handleCloseModal }) => {
 			<Box width={400} bgcolor={"background.paper"} p={1} borderRadius={5} sx={{ height: "auto", margin: "50% 3px", border: "solid white 1px" }}>
 				<UserBox sx={{ justifyContent: "space-between" }}>
 					<Typography variant="h6" color="gray" textAlign="center">
-						Создать пост
+						{title}
 					</Typography>
 					<IconButton aria-label="settings" onClick={handleCloseModal}>
 						<CloseIcon />
 					</IconButton>
-				</UserBox>			
-					<ModalWindowElements {...{handleCloseModal}}/>			
+				</UserBox>	
+				{children}					
 			</Box>
 		</MyStyledModal >
 	);

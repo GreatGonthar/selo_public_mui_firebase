@@ -2,6 +2,7 @@ import React from "react";
 import { Fab, Tooltip} from "@mui/material";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import ModalWindow from "./ModalWindow/ModalWindow"
+import ModalWindowElements from "./ModalWindow/ModalWindowElements";
 
 const AddPost = () => {
 	const [openModal, setOpenModal] = React.useState(false);
@@ -15,7 +16,9 @@ const AddPost = () => {
 					<PostAddIcon />
 				</Fab>
 			</Tooltip>
-			<ModalWindow {...{openModal, handleCloseModal}} />
+			<ModalWindow {...{openModal, handleCloseModal, title: "создать пост"}}>
+				<ModalWindowElements {...{handleCloseModal}}/>				
+			</ModalWindow>
 		</>
 	);
 };

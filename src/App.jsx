@@ -7,6 +7,9 @@ import { useState } from "react";
 function createMyTheme(mode) {
 	return createTheme({
 		palette: {
+			logButton: {
+				main: '#ffffff',
+			  },
 			mode,
 			...(mode === "light"
 				? {
