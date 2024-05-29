@@ -1,6 +1,6 @@
 import { Modal, Box, styled, Typography, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import ModalWindowElements from "./ModalWindowElements";
+import ModalWindowElements from "../AddPostModalWindow/ModalWindowElements";
 
 const ModalWindow = ({ openModal, handleCloseModal, title, children }) => {
 	const MyStyledModal = styled(Modal)({
@@ -15,11 +15,17 @@ const ModalWindow = ({ openModal, handleCloseModal, title, children }) => {
 		alignItems: "center",
 		gap: "10px",
 		margin: "12px 2px",
-	});	
+	});
 
 	return (
 		<MyStyledModal open={openModal} onClose={handleCloseModal}>
-			<Box width={400} bgcolor={"background.paper"} p={1} borderRadius={5} sx={{ height: "auto", margin: "50% 3px", border: "solid white 1px" }}>
+			<Box
+				width={400}
+				bgcolor={"background.paper"}
+				p={1}
+				borderRadius={5}
+				sx={{ height: "auto", margin: "50% 3px", border: "solid white 1px" }}
+			>
 				<UserBox sx={{ justifyContent: "space-between" }}>
 					<Typography variant="h6" color="gray" textAlign="center">
 						{title}
@@ -27,10 +33,10 @@ const ModalWindow = ({ openModal, handleCloseModal, title, children }) => {
 					<IconButton aria-label="settings" onClick={handleCloseModal}>
 						<CloseIcon />
 					</IconButton>
-				</UserBox>	
-				{children}					
+				</UserBox>
+				{children}
 			</Box>
-		</MyStyledModal >
+		</MyStyledModal>
 	);
 };
 

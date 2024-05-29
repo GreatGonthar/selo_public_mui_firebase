@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { getFirebasePosts } from "../redux/asyncActions/posts";
 
-const Feed = () => {	
-	const dispatch = useDispatch()
+const Feed = () => {
+	const dispatch = useDispatch();
 	const posts = useSelector((state) => state.posts);
 	useEffect(() => {
 		dispatch(getFirebasePosts());
@@ -14,13 +14,17 @@ const Feed = () => {
 	return (
 		<>
 			{posts.length === 0 ? (
-				    <Box sx={{ display: 'flex', 
-					justifyContent: 'center', 
-					alignItems: 'center', 
-					height: '100vh',
-					width: "100%" }}>
-					<CircularProgress size={100}/>
-				  </Box>
+				<Box
+					sx={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						height: "100vh",
+						width: "100%",
+					}}
+				>
+					<CircularProgress size={100} />
+				</Box>
 			) : (
 				<Box flex={3} p={1} pb={10} sx={{ maxWidth: "100%" }}>
 					{posts.map((elem) => {

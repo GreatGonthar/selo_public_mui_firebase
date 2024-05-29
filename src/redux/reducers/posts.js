@@ -14,22 +14,14 @@ export default (state = initialState, action) => {
 			return [action.payload, ...state];
 		}
 		case BLYA_MODE: {
-			if(!action.payload){
-				return [...state.map((post) => ({ ...post, textContent: post.textContent.replace(/,/g, ` ${blya},`) }))];
-			}else {
-				const regex = new RegExp(` ${blya},`, 'g')
-				return [...state.map((post) => (
-					{ ...post, textContent: post.textContent.replace(regex, ",") }
-				))];
+			if (!action.payload) {
+				return [
+					...state.map((post) => ({ ...post, textContent: post.textContent.replace(/,/g, ` ${blya},`) })),
+				];
+			} else {
+				const regex = new RegExp(` ${blya},`, "g");
+				return [...state.map((post) => ({ ...post, textContent: post.textContent.replace(regex, ",") }))];
 			}
-
-			// 	return [
-			// 		...state.map((post) => {
-			// 			const regex = new RegExp(blya, 'g')
-			// 			post.textContent.replace(regex, ",");
-			// 		}),
-			// 	];
-			// }
 		}
 		default:
 			return state;

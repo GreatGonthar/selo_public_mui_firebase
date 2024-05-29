@@ -2,14 +2,16 @@ import Feed from "./components/Feed";
 import Navbar from "./components/Navbar/Navbar";
 import { Box, Stack, createTheme, ThemeProvider } from "@mui/material";
 import AddPost from "./components/AddPost";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getFirebaseUsers } from "./redux/asyncActions/users";
+import { useDispatch } from "react-redux";
 
 function createMyTheme(mode) {
 	return createTheme({
 		palette: {
 			logButton: {
-				main: '#ffffff',
-			  },
+				main: "#ffffff",
+			},
 			mode,
 			...(mode === "light"
 				? {
@@ -25,16 +27,20 @@ function createMyTheme(mode) {
 }
 
 function App() {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(getFirebaseUsers());
+	}, []);
 	const [mode, setMode] = useState("light");
-	const [blya, setBlya] = useState(false)
+	const [blya, setBlya] = useState(false);
 	const theme = createMyTheme(mode);
 
 	return (
 		<ThemeProvider theme={theme}>
 			<Box bgcolor={"background.default"}>
-				<Navbar {...{mode, setMode, blya, setBlya}} />
+				<Navbar {...{ mode, setMode, blya, setBlya }} />
 				<Stack direction="row" justifyContent="space-between">
-					<Feed />
+					{/* <Feed /> */}
 				</Stack>
 				<AddPost />
 			</Box>

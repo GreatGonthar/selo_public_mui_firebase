@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import TemporaryDrawer from "../Sidebar/TemporaryDrawer";
 import NavbarMenu from "./NavbarMenu";
-import LoginButton from "./LoginButton";
+import LoginButton from "./LoginButton/LoginButton";
 import { Button } from "@mui/material";
 
 function Navbar(props) {
@@ -15,7 +15,7 @@ function Navbar(props) {
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Box sx={{ flexGrow: 1 }}>
-						<TemporaryDrawer {...props}/>
+						<TemporaryDrawer {...props} />
 					</Box>
 					<Typography
 						variant="h5"
@@ -32,11 +32,12 @@ function Navbar(props) {
 							letterSpacing: ".3rem",
 							color: "inherit",
 							textDecoration: "none",
-						}}>
+						}}
+					>
 						Social Network
 					</Typography>
 					<LoginButton />
-					
+
 					{/* <NavbarMenu /> */}
 				</Toolbar>
 			</Container>
